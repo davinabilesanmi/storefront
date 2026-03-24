@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sony WH-1000XM5 — LUMÉ</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS-only tab switcher via :target -->
+  <style>
+    .tab-panel { display: none; }
+    .tab-panel:target,
+    #tab-desc:target ~ #default-tab,
+    #default-tab { display: block; }
+    #tab-specs:target ~ #default-tab { display: none; }
+    #tab-reviews:target ~ #default-tab { display: none; }
+    #tab-specs:target   ~ #tab-specs-panel   { display: block; }
+    #tab-reviews:target ~ #tab-reviews-panel { display: block; }
+    #tab-specs:target   ~ #tab-desc-panel    { display: none; }
+    #tab-reviews:target ~ #tab-desc-panel    { display: none; }
+
+    /* Highlight active tab link via :target */
+    .tab-trigger { color: var(--muted); border-bottom: 2px solid transparent; }
+    #tab-specs:target   ~ .detail-tabs .tab-trigger[href="#tab-specs"]   { color: var(--charcoal); border-bottom-color: var(--charcoal); }
+    #tab-reviews:target ~ .detail-tabs .tab-trigger[href="#tab-reviews"] { color: var(--charcoal); border-bottom-color: var(--charcoal); }
+    .tab-trigger:hover { color: var(--charcoal); }
+
+    /* Thumbnail swap via :target */
+    .img-main { display: none; }
+    #img1:target ~ .gallery-wrap .img-1,
+    #img2:target ~ .gallery-wrap .img-2,
+    #img3:target ~ .gallery-wrap .img-3,
+    #img4:target ~ .gallery-wrap .img-4 { display: block; }
+    .img-main.img-1 { display: block; } /* default */
+  </style>
+</head>
+<body>
+
+  <!-- ─── TOP BAR ──────────────────────────────── -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <span>Free shipping on orders over ₦25,000 &nbsp;·&nbsp; Use code <strong>LUMÉ10</strong> for 10% off</span>
+        <div class="d-flex gap-3">
+          <a href="#">Help Centre</a>
+          <a href="#">Track Order</a>
+          <a href="#">Sell on LUMÉ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── NAVBAR ───────────────────────────────── -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-inner w-100">
+        <a href="index.html" class="navbar-brand">LU<span>MÉ</span></a>
+        <div class="search-wrap">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" placeholder="Search products, brands, categories…" />
+        </div>
+        <div class="nav-actions">
+          <a href="#" class="nav-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Account</span>
+          </a>
+          <a href="#" class="nav-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span>Wishlist</span>
+          </a>
+          <div class="nav-btn-wrap">
+            <a href="cart.html" class="nav-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              <span>Cart</span>
+              <span class="badge">3</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-menu">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Electronics</a></li>
+        <li><a href="products.html">Fashion</a></li>
+        <li><a href="products.html">Beauty</a></li>
+        <li><a href="products.html">Home & Living</a></li>
+        <li><a href="products.html">Sports</a></li>
+        <li><a href="products.html">Baby & Kids</a></li>
+        <li><a href="products.html" style="color:var(--accent)">🔥 Flash Deals</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ─── BREADCRUMB ──────────────────────────── -->
+  <div style="background:var(--white);border-bottom:1px solid var(--border);padding:14px 0">
+    <div class="container">
+      <div class="breadcrumb-c">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="products.html">Electronics</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="products.html">Headphones</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Sony WH-1000XM5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── PRODUCT DETAIL ──────────────────────── -->
+  <div class="container" style="padding-top:40px;padding-bottom:72px">
+    <div class="row g-5">
+
+      <!-- ── Gallery (left) ──────────────────── -->
+      <div class="col-lg-5">
+        <div class="detail-gallery">
+
+          <!-- Anchor targets for image swap (CSS-only) -->
+          <span id="img1"></span>
+          <span id="img2"></span>
+          <span id="img3"></span>
+          <span id="img4"></span>
+
+          <div class="gallery-wrap">
+            <!-- Main image -->
+            <div class="main-img-wrap zoom-container img-main img-1">
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=720&q=85" alt="Sony WH-1000XM5 main" />
+            </div>
+            <div class="main-img-wrap zoom-container img-main img-2" style="display:none">
+              <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=720&q=85" alt="Sony WH-1000XM5 angle" />
+            </div>
+            <div class="main-img-wrap zoom-container img-main img-3" style="display:none">
+              <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=720&q=85" alt="Sony WH-1000XM5 side" />
+            </div>
+            <div class="main-img-wrap zoom-container img-main img-4" style="display:none">
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=720&q=85" alt="Sony WH-1000XM5 lifestyle" />
+            </div>
+
+            <!-- Thumbnails (href targets trigger CSS image swap) -->
+            <div class="thumb-row mt-3">
+              <a href="#img1" class="thumb active">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=160&q=70" alt="View 1" />
+              </a>
+              <a href="#img2" class="thumb">
+                <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=160&q=70" alt="View 2" />
+              </a>
+              <a href="#img3" class="thumb">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=160&q=70" alt="View 3" />
+              </a>
+              <a href="#img4" class="thumb">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=160&q=70" alt="View 4" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Shipping card -->
+          <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;margin-top:20px">
+            <div class="d-flex flex-column gap-3">
+              <div class="d-flex align-items-center gap-12" style="gap:12px">
+                <div class="feature-icon" style="flex-shrink:0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="m16 8 4 0 3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <div>
+                  <strong style="font-size:.82rem;display:block">Free Delivery</strong>
+                  <span style="font-size:.76rem;color:var(--muted)">Order before 2 PM, delivered today</span>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-12" style="gap:12px">
+                <div class="feature-icon" style="flex-shrink:0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </div>
+                <div>
+                  <strong style="font-size:.82rem;display:block">15-Day Returns</strong>
+                  <span style="font-size:.76rem;color:var(--muted)">Easy, hassle-free returns policy</span>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-12" style="gap:12px">
+                <div class="feature-icon" style="flex-shrink:0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <strong style="font-size:.82rem;display:block">2-Year Warranty</strong>
+                  <span style="font-size:.76rem;color:var(--muted)">Manufacturer warranty included</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Product Info (right) ─────────────── -->
+      <div class="col-lg-7">
+        <div class="detail-info">
+          <p class="detail-category">Electronics · Headphones</p>
+          <h1 class="detail-title">Sony WH-1000XM5 Wireless Noise Cancelling Headphones</h1>
+
+          <div class="detail-rating">
+            <div class="stars" style="font-size:1rem">★★★★★</div>
+            <span class="count">4.9</span>
+            <a href="#tab-reviews" class="reviews-link">2,841 reviews</a>
+            <span style="color:var(--border)">|</span>
+            <span style="font-size:.82rem;color:var(--success);font-weight:500">✓ 1,204 sold this month</span>
+          </div>
+
+          <div class="detail-price-wrap">
+            <span class="detail-price">₦189,000</span>
+            <span class="detail-price-old">₦305,000</span>
+            <span class="detail-discount">Save 38%</span>
+          </div>
+
+          <!-- Notify bar -->
+          <div class="notify-bar">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Only <strong>&nbsp;7 units&nbsp;</strong> left in stock. Order now to avoid missing out.
+          </div>
+
+          <!-- Stock -->
+          <div class="stock-indicator mb-3">
+            <span class="stock-dot"></span>
+            <span class="stock-text">In Stock</span>
+            <span style="color:var(--border);margin:0 6px">|</span>
+            <span style="font-size:.8rem;color:var(--muted)">Ships from Lagos Warehouse</span>
+          </div>
+
+          <!-- Colour -->
+          <div class="mb-4">
+            <p class="option-title">Colour — <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--mid)">Midnight Black</span></p>
+            <div class="d-flex gap-2">
+              <div class="color-swatch active" style="background:#1C1C1C;width:32px;height:32px" title="Black"></div>
+              <div class="color-swatch" style="background:#F5F0E8;width:32px;height:32px;border-color:#ccc" title="Platinum Silver"></div>
+              <div class="color-swatch" style="background:#8B4513;width:32px;height:32px" title="Brown"></div>
+            </div>
+          </div>
+
+          <!-- Quantity -->
+          <div class="qty-wrap">
+            <span class="qty-label">Quantity</span>
+            <div class="qty-control">
+              <button class="qty-btn">−</button>
+              <input type="number" value="1" min="1" max="99" />
+              <button class="qty-btn">+</button>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="detail-actions">
+            <a href="cart.html" class="btn-primary-c" style="flex:1;justify-content:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              Add to Cart
+            </a>
+            <a href="#" class="wishlist-action">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </a>
+            <a href="#" class="wishlist-action">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            </a>
+          </div>
+
+          <a href="cart.html" class="btn-outline-c w-100 justify-content-center" style="margin-top:0">
+            Buy Now — Pay with Paystack
+          </a>
+
+          <!-- Tabs (CSS-only via :target) -->
+          <div style="margin-top:36px">
+
+            <!-- Anchor targets -->
+            <span id="tab-desc"></span>
+            <span id="tab-specs"></span>
+            <span id="tab-reviews"></span>
+
+            <div class="detail-tabs">
+              <a href="#tab-desc"    class="tab-link tab-trigger active">Description</a>
+              <a href="#tab-specs"   class="tab-link tab-trigger">Specifications</a>
+              <a href="#tab-reviews" class="tab-link tab-trigger">Reviews (2,841)</a>
+            </div>
+
+            <!-- Description (default visible) -->
+            <div id="default-tab" class="tab-panel" style="display:block" id="tab-desc-panel">
+              <p style="color:var(--mid);font-size:.9rem;line-height:1.8;margin-bottom:14px">
+                The Sony WH-1000XM5 redefines what wireless noise cancellation can be. With two processors controlling eight microphones, it eliminates more sound than any previous XM series — from airplane cabins to coffee shops.
+              </p>
+              <p style="color:var(--mid);font-size:.9rem;line-height:1.8;margin-bottom:14px">
+                The new HD Noise Cancelling Processor QN1 and integrated V1 processor work together with Precise Voice Pickup technology, producing crystal-clear call quality even in windy environments. 30-hour battery life with quick charging (3 minutes = 3 hours) keeps you going all day.
+              </p>
+              <ul style="color:var(--mid);font-size:.88rem;line-height:2;padding-left:16px;list-style:disc">
+                <li>Industry-leading noise cancellation with 8 microphones and 2 processors</li>
+                <li>30-hour battery life, Quick Charge (3 min → 3 hrs)</li>
+                <li>Multipoint Bluetooth connection (connect to 2 devices simultaneously)</li>
+                <li>Speak-to-Chat auto-pauses music when you talk</li>
+                <li>Hi-Res Audio Wireless with LDAC support</li>
+                <li>360 Reality Audio certified</li>
+                <li>New lightweight, folding design at just 250g</li>
+              </ul>
+            </div>
+
+            <!-- Specifications -->
+            <div class="tab-panel" id="tab-specs-panel">
+              <table class="spec-table">
+                <tr><td>Driver Size</td><td>30mm, dome type</td></tr>
+                <tr><td>Frequency Response</td><td>4Hz–40,000Hz (JEITA)</td></tr>
+                <tr><td>Impedance</td><td>48Ω (1kHz, 1V rms)</td></tr>
+                <tr><td>Sensitivity</td><td>102dB/mW</td></tr>
+                <tr><td>Wireless Range</td><td>Up to 10m / 30ft</td></tr>
+                <tr><td>Bluetooth Version</td><td>5.2</td></tr>
+                <tr><td>Supported Codecs</td><td>SBC, AAC, LDAC</td></tr>
+                <tr><td>Battery Life (NC on)</td><td>Up to 30 hours</td></tr>
+                <tr><td>Charging Time</td><td>3.5 hours (USB-C)</td></tr>
+                <tr><td>Quick Charge</td><td>3 min → 3 hrs playback</td></tr>
+                <tr><td>Weight</td><td>250g</td></tr>
+                <tr><td>Noise Cancellation</td><td>Yes — 8 microphones, 2 processors</td></tr>
+                <tr><td>Microphones</td><td>5 for voice pickup, 3 for NC</td></tr>
+                <tr><td>Colours</td><td>Midnight Black, Platinum Silver, Brown</td></tr>
+                <tr><td>In The Box</td><td>Headphones, USB-C cable, 3.5mm cable, carry case</td></tr>
+              </table>
+            </div>
+
+            <!-- Reviews -->
+            <div class="tab-panel" id="tab-reviews-panel">
+              <div class="d-flex align-items-center gap-4 mb-4 p-3" style="background:var(--cream);border-radius:var(--radius-lg)">
+                <div class="text-center">
+                  <div style="font-family:var(--font-display);font-size:3rem;font-weight:500;line-height:1;color:var(--charcoal)">4.9</div>
+                  <div class="stars" style="justify-content:center;font-size:1rem;margin:4px 0">★★★★★</div>
+                  <div style="font-size:.76rem;color:var(--muted)">2,841 reviews</div>
+                </div>
+                <div class="flex-1 w-100" style="flex:1">
+                  <div class="d-flex align-items-center gap-2 mb-1"><span style="font-size:.76rem;width:36px">5 ★</span><div class="flex-1" style="flex:1;height:6px;background:var(--border);border-radius:99px"><div style="width:84%;height:100%;background:#F4C043;border-radius:99px"></div></div><span style="font-size:.76rem;color:var(--muted);width:28px">84%</span></div>
+                  <div class="d-flex align-items-center gap-2 mb-1"><span style="font-size:.76rem;width:36px">4 ★</span><div class="flex-1" style="flex:1;height:6px;background:var(--border);border-radius:99px"><div style="width:11%;height:100%;background:#F4C043;border-radius:99px"></div></div><span style="font-size:.76rem;color:var(--muted);width:28px">11%</span></div>
+                  <div class="d-flex align-items-center gap-2 mb-1"><span style="font-size:.76rem;width:36px">3 ★</span><div class="flex-1" style="flex:1;height:6px;background:var(--border);border-radius:99px"><div style="width:3%;height:100%;background:#F4C043;border-radius:99px"></div></div><span style="font-size:.76rem;color:var(--muted);width:28px">3%</span></div>
+                  <div class="d-flex align-items-center gap-2 mb-1"><span style="font-size:.76rem;width:36px">2 ★</span><div class="flex-1" style="flex:1;height:6px;background:var(--border);border-radius:99px"><div style="width:1%;height:100%;background:#F4C043;border-radius:99px"></div></div><span style="font-size:.76rem;color:var(--muted);width:28px">1%</span></div>
+                  <div class="d-flex align-items-center gap-2"><span style="font-size:.76rem;width:36px">1 ★</span><div class="flex-1" style="flex:1;height:6px;background:var(--border);border-radius:99px"><div style="width:1%;height:100%;background:#F4C043;border-radius:99px"></div></div><span style="font-size:.76rem;color:var(--muted);width:28px">1%</span></div>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <p class="reviewer-name">Adaora O.</p>
+                    <div class="stars" style="font-size:.85rem">★★★★★</div>
+                  </div>
+                  <span class="review-date">12 Jan 2025 · Verified Purchase</span>
+                </div>
+                <p class="review-text">Absolutely incredible headphones. The noise cancellation is in a league of its own — I wore these on a Lagos to London flight and could hear nothing but my music. Build quality feels premium and the battery lasts forever. 100% worth every kobo.</p>
+              </div>
+
+              <div class="review-card">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <p class="reviewer-name">Emeka I.</p>
+                    <div class="stars" style="font-size:.85rem">★★★★★</div>
+                  </div>
+                  <span class="review-date">3 Feb 2025 · Verified Purchase</span>
+                </div>
+                <p class="review-text">I've owned the XM3 and XM4 — this is a massive step up. The ear cups are softer, the design is sleeker, and the NC is noticeably stronger. Multipoint works flawlessly between my MacBook and phone. Highly recommend.</p>
+              </div>
+
+              <div class="review-card">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <p class="reviewer-name">Fatima B.</p>
+                    <div class="stars" style="font-size:.85rem">★★★★☆</div>
+                  </div>
+                  <span class="review-date">28 Jan 2025 · Verified Purchase</span>
+                </div>
+                <p class="review-text">Great product overall. My only minor complaint is that they don't fold flat anymore so the case is a bit bulkier. But the sound quality and NC are second to none. Would buy again.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── RELATED PRODUCTS ─────────────────── -->
+    <div style="margin-top:72px">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <p class="section-label">You may also like</p>
+          <h2 class="section-title">Related Products</h2>
+        </div>
+        <a href="products.html" class="btn-ghost">
+          See All
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-badge badge-new">New</span>
+              <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=480&q=80" alt="Beats" />
+              <a href="#" class="wishlist-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">Beats</p>
+              <p class="product-name">Studio Pro Wireless Headphones</p>
+              <div class="product-rating"><div class="stars">★★★★☆</div><span class="rating-count">(1,450)</span></div>
+              <div class="product-price"><span class="price-current">₦245,000</span></div>
+              <a href="product-detail.html" class="product-card-btn">View Product</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=480&q=80" alt="Bose QC45" />
+              <a href="#" class="wishlist-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">Bose</p>
+              <p class="product-name">QuietComfort 45 Bluetooth Headphones</p>
+              <div class="product-rating"><div class="stars">★★★★★</div><span class="rating-count">(3,102)</span></div>
+              <div class="product-price"><span class="price-current">₦215,000</span><span class="price-old">₦265,000</span></div>
+              <a href="product-detail.html" class="product-card-btn">View Product</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <span class="product-badge badge-sale">-22%</span>
+              <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=480&q=80" alt="AirPods" />
+              <a href="#" class="wishlist-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">Apple</p>
+              <p class="product-name">AirPods Pro 2nd Generation with MagSafe</p>
+              <div class="product-rating"><div class="stars">★★★★★</div><span class="rating-count">(12,340)</span></div>
+              <div class="product-price"><span class="price-current">₦320,000</span><span class="price-old">₦410,000</span></div>
+              <a href="product-detail.html" class="product-card-btn">View Product</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=480&q=80" alt="Sennheiser" />
+              <a href="#" class="wishlist-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></a>
+            </div>
+            <div class="product-info">
+              <p class="product-brand">Sennheiser</p>
+              <p class="product-name">MOMENTUM 4 Wireless Headphones — White</p>
+              <div class="product-rating"><div class="stars">★★★★☆</div><span class="rating-count">(876)</span></div>
+              <div class="product-price"><span class="price-current">₦278,000</span></div>
+              <a href="product-detail.html" class="product-card-btn">View Product</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ───────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="footer-brand">LU<span>MÉ</span></div>
+          <p class="footer-tagline">Your trusted marketplace for quality products across Africa and beyond.</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <p class="footer-heading">Shop</p>
+          <ul class="footer-links">
+            <li><a href="products.html">Electronics</a></li>
+            <li><a href="products.html">Fashion</a></li>
+            <li><a href="products.html">Beauty</a></li>
+            <li><a href="products.html">Home & Living</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <p class="footer-heading">Help</p>
+          <ul class="footer-links">
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <p class="footer-heading">About</p>
+          <ul class="footer-links">
+            <li><a href="#">About LUMÉ</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 LUMÉ Commerce Ltd. All rights reserved.</p>
+        <div class="footer-payments">
+          <span class="payment-badge">Visa</span>
+          <span class="payment-badge">Mastercard</span>
+          <span class="payment-badge">PayStack</span>
+          <span class="payment-badge">Flutterwave</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
